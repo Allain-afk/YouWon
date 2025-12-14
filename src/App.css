@@ -6,6 +6,106 @@
   min-height: 100vh;
 }
 
+.musicToggleWrap {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 10000;
+}
+
+.musicToggleBtn {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  color: #111827;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+}
+
+.musicToggleBtn:hover {
+  filter: brightness(1.03);
+}
+
+.musicToggleBtn:active {
+  transform: translateY(1px);
+}
+
+/* ================================
+   MOBILE RESPONSIVE TWEAKS
+   ================================ */
+
+@media (max-width: 560px) {
+  .musicToggleWrap {
+    top: 10px;
+    right: 10px;
+  }
+
+  .musicToggleBtn {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .baitOverlay {
+    padding: 14px;
+  }
+
+  .baitOverlay__content {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .baitBadge {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .baitGrid {
+    gap: 14px;
+  }
+
+  .baitPhone {
+    width: min(340px, 100%);
+  }
+
+  .baitTimer {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .baitWinnerPrize {
+    margin-top: 6px;
+  }
+
+  .reveal {
+    padding: 18px;
+  }
+
+  .revealCard {
+    padding: 16px;
+  }
+
+  .revealDetails__top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .revealCtaRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .revealCtaBtn {
+    width: 100%;
+  }
+}
+
 /* ================================
    REQUIRED ANIMATIONS
    ================================ */
@@ -206,11 +306,20 @@
 .baitPhone {
   display: grid;
   place-items: center;
+  width: min(300px, 78vw);
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.18);
 }
 
 .baitPhone__img {
-  width: min(220px, 70vw);
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  transform: scale(1.06);
   filter: drop-shadow(0 26px 28px rgba(0, 0, 0, 0.35));
   animation: pulse 1400ms ease-in-out infinite;
 }
@@ -355,4 +464,97 @@
   margin: 14px 0 0;
   font-weight: 700;
   color: rgba(17, 24, 39, 0.85);
+}
+
+.revealDetails {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  background: rgba(17, 24, 39, 0.02);
+}
+
+.revealDetails__top {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.revealProductName {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.revealPrice {
+  font-weight: 900;
+  color: #111827;
+}
+
+.revealBlurb {
+  margin: 8px 0 0;
+  color: rgba(17, 24, 39, 0.75);
+  font-size: 14px;
+}
+
+.revealKpis {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.revealKpi {
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: #ffffff;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+}
+
+.revealKpi__label {
+  font-size: 12px;
+  color: rgba(17, 24, 39, 0.6);
+  font-weight: 700;
+}
+
+.revealKpi__value {
+  margin-top: 2px;
+  font-size: 16px;
+  font-weight: 900;
+  color: #111827;
+}
+
+.revealCtaRow {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.revealCtaBtn {
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 900;
+  cursor: pointer;
+  background: #111827;
+  color: #ffffff;
+}
+
+.revealCtaBtn:hover {
+  filter: brightness(1.06);
+}
+
+.revealFinePrint {
+  font-size: 12px;
+  color: rgba(17, 24, 39, 0.6);
+}
+
+@media (min-width: 720px) {
+  .revealKpis {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
