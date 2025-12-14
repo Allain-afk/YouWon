@@ -1,0 +1,358 @@
+/* ================================
+   APP BASE
+   ================================ */
+
+.appRoot {
+  min-height: 100vh;
+}
+
+/* ================================
+   REQUIRED ANIMATIONS
+   ================================ */
+
+@keyframes shake {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  10% {
+    transform: translate3d(-1px, 1px, 0) rotate(-0.5deg);
+  }
+  20% {
+    transform: translate3d(2px, -1px, 0) rotate(0.7deg);
+  }
+  30% {
+    transform: translate3d(-3px, 0, 0) rotate(-0.9deg);
+  }
+  40% {
+    transform: translate3d(3px, 2px, 0) rotate(0.6deg);
+  }
+  50% {
+    transform: translate3d(-2px, -2px, 0) rotate(-0.6deg);
+  }
+  60% {
+    transform: translate3d(3px, 1px, 0) rotate(0.8deg);
+  }
+  70% {
+    transform: translate3d(-1px, 2px, 0) rotate(-0.5deg);
+  }
+  80% {
+    transform: translate3d(2px, -2px, 0) rotate(0.5deg);
+  }
+  90% {
+    transform: translate3d(-2px, 1px, 0) rotate(-0.4deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateZ(0) scale(1);
+    filter: saturate(1);
+  }
+  50% {
+    transform: translateZ(0) scale(1.06);
+    filter: saturate(1.25);
+  }
+  100% {
+    transform: translateZ(0) scale(1);
+    filter: saturate(1);
+  }
+}
+
+@keyframes spin-bg {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes overlay-exit {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  to {
+    transform: translateY(-110%);
+    opacity: 0;
+    filter: blur(2px);
+  }
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   BAIT OVERLAY (FLASHY)
+   ================================ */
+
+.baitOverlay {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: clamp(18px, 4vw, 36px);
+  color: #1a1200;
+  background: radial-gradient(circle at 25% 15%, #fff6a6 0%, #ffd166 32%, #ff5d2f 62%, #a10f00 100%);
+}
+
+.baitOverlay--exit {
+  animation: overlay-exit 700ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.baitOverlay__rays {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 140vmax;
+  height: 140vmax;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  opacity: 0.45;
+  background:
+    repeating-conic-gradient(
+      from 0deg,
+      rgba(255, 255, 255, 0.9) 0deg,
+      rgba(255, 255, 255, 0.9) 9deg,
+      rgba(255, 255, 255, 0.0) 9deg,
+      rgba(255, 255, 255, 0.0) 18deg
+    );
+  animation: spin-bg 4.8s linear infinite;
+  filter: blur(0.2px);
+}
+
+.baitOverlay__content {
+  position: relative;
+  width: min(980px, 100%);
+  padding: clamp(18px, 3.2vw, 32px);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.76);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.65);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35),
+    0 3px 0 rgba(0, 0, 0, 0.08);
+}
+
+.baitBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: #111827;
+  color: #fff;
+  box-shadow: 0 10px 26px rgba(17, 24, 39, 0.35);
+  animation: pulse 900ms ease-in-out infinite;
+}
+
+.baitHeadline {
+  margin: 14px 0 6px;
+  font-size: clamp(40px, 5vw, 68px);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: 1000;
+  text-transform: uppercase;
+  color: #b00000;
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.7),
+    0 10px 35px rgba(160, 0, 0, 0.35);
+}
+
+.baitSubtext {
+  margin: 0;
+  font-size: clamp(16px, 2.1vw, 20px);
+  font-weight: 800;
+}
+
+.baitWinnerLine {
+  margin: 12px 0 0;
+  font-size: clamp(18px, 2.4vw, 22px);
+  font-weight: 900;
+}
+
+.baitWinnerPrize {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 12px;
+  background: rgba(255, 0, 0, 0.12);
+  border: 2px dashed rgba(176, 0, 0, 0.45);
+}
+
+.baitGrid {
+  margin-top: clamp(14px, 2vw, 20px);
+  display: grid;
+  gap: clamp(14px, 3vw, 24px);
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+.baitPhone {
+  display: grid;
+  place-items: center;
+}
+
+.baitPhone__img {
+  width: min(220px, 70vw);
+  height: auto;
+  filter: drop-shadow(0 26px 28px rgba(0, 0, 0, 0.35));
+  animation: pulse 1400ms ease-in-out infinite;
+}
+
+.baitRight {
+  display: grid;
+  gap: 14px;
+}
+
+.baitTimer {
+  border-radius: 16px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(176, 0, 0, 0.25);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+.baitTimer__label {
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #7c0011;
+  font-size: 12px;
+}
+
+.baitTimer__time {
+  margin-top: 6px;
+  font-size: clamp(34px, 6vw, 54px);
+  font-weight: 1000;
+  color: #111827;
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.7);
+}
+
+.baitTimer__finePrint {
+  margin-top: 4px;
+  font-size: 12px;
+  color: rgba(17, 24, 39, 0.75);
+}
+
+.baitButton {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 0;
+  font-size: clamp(18px, 3.6vw, 22px);
+  font-weight: 1000;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #00ff84 0%, #00c26a 100%);
+  color: #06220f;
+  box-shadow:
+    0 18px 0 rgba(0, 0, 0, 0.12),
+    0 18px 40px rgba(0, 0, 0, 0.25),
+    0 0 0 3px rgba(255, 255, 255, 0.55) inset;
+  cursor: pointer;
+  animation: shake 120ms linear infinite;
+}
+
+.baitButton:hover {
+  transform: translateY(-1px);
+}
+
+.baitButton:active {
+  transform: translateY(2px);
+}
+
+.baitButton:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+  animation: pulse 900ms ease-in-out infinite;
+}
+
+.baitDisclaimer {
+  font-size: 12px;
+  color: rgba(17, 24, 39, 0.7);
+}
+
+@media (min-width: 820px) {
+  .baitGrid {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+
+  .baitRight {
+    align-content: start;
+  }
+}
+
+/* ================================
+   REVEAL (CLEAN)
+   ================================ */
+
+.reveal {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: clamp(20px, 4vw, 48px);
+  background: #f6f7fb;
+  color: #111827;
+  animation: reveal-in 520ms ease-out both;
+}
+
+.revealCard {
+  width: min(980px, 100%);
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  box-shadow: 0 24px 70px rgba(17, 24, 39, 0.12);
+  padding: clamp(16px, 2.6vw, 28px);
+}
+
+.revealHeader {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.revealTitle {
+  margin: 0;
+  font-size: clamp(22px, 3.4vw, 34px);
+  font-weight: 900;
+}
+
+.revealSubtitle {
+  margin: 0;
+  color: rgba(17, 24, 39, 0.7);
+  font-size: 14px;
+}
+
+.revealPoster {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid rgba(17, 24, 39, 0.10);
+  box-shadow:
+    0 18px 60px rgba(17, 24, 39, 0.18),
+    0 2px 0 rgba(17, 24, 39, 0.04);
+  background: #fff;
+}
+
+.revealCaption {
+  margin: 14px 0 0;
+  font-weight: 700;
+  color: rgba(17, 24, 39, 0.85);
+}
