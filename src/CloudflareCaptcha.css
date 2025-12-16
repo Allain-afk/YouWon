@@ -202,21 +202,65 @@
 }
 
 @media (max-width: 600px) {
+  .cloudflare-header {
+    padding: 15px 20px;
+  }
+
+  .cloudflare-logo {
+    width: 120px;
+  }
+
+  .cloudflare-container {
+    padding: 20px 15px;
+  }
+
   .cloudflare-card {
-    padding: 30px 20px;
+    padding: 25px 15px;
   }
 
   .cloudflare-title h1 {
-    font-size: 22px;
+    font-size: 20px;
+  }
+
+  .shield-icon {
+    font-size: 24px;
+  }
+
+  .cloudflare-subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .verification-section {
+    margin: 30px 0;
   }
 
   .captcha-box {
     min-width: auto;
     width: 100%;
-    padding: 20px;
+    padding: 15px;
+  }
+
+  .checkbox-container {
+    gap: 12px;
+  }
+
+  .checkbox {
+    width: 24px;
+    height: 24px;
   }
 
   .checkbox-label {
     font-size: 14px;
+  }
+
+  .cloudflare-info p {
+    font-size: 12px;
+  }
+
+  .cloudflare-footer {
+    margin-top: 30px;
+    padding: 15px;
+    font-size: 11px;
   }
 }

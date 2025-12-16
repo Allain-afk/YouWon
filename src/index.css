@@ -15,9 +15,15 @@
 
 body {
   margin: 0;
-  min-width: 320px;
+  min-width: 280px;
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+@media (max-width: 360px) {
+  :root {
+    font-size: 15px;
+  }
 }
 
 #root {
