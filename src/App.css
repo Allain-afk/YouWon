@@ -109,6 +109,29 @@
   }
 }
 
+@media (max-width: 480px) {
+  .baitHeadline {
+    font-size: clamp(30px, 9vw, 44px);
+  }
+
+  .baitPhone {
+    width: min(260px, 88vw);
+  }
+
+  .baitTimer__time {
+    font-size: clamp(28px, 8vw, 40px);
+  }
+
+  .baitButton {
+    padding: 14px 16px;
+    font-size: clamp(16px, 4.5vw, 19px);
+  }
+
+  .revealKpis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 420px) {
   .musicToggleBtn {
     padding: 7px 10px;
@@ -189,10 +212,6 @@
     font-size: 13px;
   }
 
-  .revealKpis {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .revealKpi {
     padding: 8px 10px;
   }
@@ -225,6 +244,206 @@
   .revealCaption {
     font-size: 13px;
     margin-top: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .baitBadge {
+    font-size: 9px;
+    padding: 6px 9px;
+  }
+
+  .baitHeadline {
+    font-size: clamp(26px, 11vw, 36px);
+  }
+
+  .baitSubtext {
+    font-size: clamp(13px, 4.5vw, 16px);
+  }
+
+  .baitPhone {
+    width: min(220px, 92vw);
+  }
+
+  .baitTimer__time {
+    font-size: clamp(22px, 10vw, 32px);
+  }
+
+  .baitButton {
+    padding: 12px 14px;
+    font-size: clamp(14px, 5.5vw, 17px);
+  }
+
+  .revealTitle {
+    font-size: clamp(18px, 7vw, 26px);
+  }
+
+  .revealCard {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 320px) {
+  .musicToggleBtn {
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+
+  .baitOverlay {
+    padding: 8px;
+  }
+
+  .baitOverlay__content {
+    padding: 10px;
+    border-radius: 14px;
+  }
+
+  .baitBadge {
+    font-size: 7px;
+    padding: 5px 7px;
+    letter-spacing: 0.04em;
+  }
+
+  .baitHeadline {
+    font-size: 22px;
+    margin: 8px 0 4px;
+    line-height: 1.1;
+  }
+
+  .baitSubtext {
+    font-size: 12px;
+  }
+
+  .baitWinnerLine {
+    font-size: 13px;
+    margin: 8px 0 0;
+  }
+
+  .baitWinnerPrize {
+    padding: 5px 8px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+
+  .baitGrid {
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .baitPhone {
+    width: 180px;
+    border-radius: 12px;
+  }
+
+  .baitTimer {
+    padding: 8px;
+    border-radius: 12px;
+  }
+
+  .baitTimer__label {
+    font-size: 9px;
+  }
+
+  .baitTimer__time {
+    font-size: 28px;
+    margin-top: 4px;
+  }
+
+  .baitTimer__finePrint {
+    font-size: 9px;
+    margin-top: 3px;
+  }
+
+  .baitButton {
+    padding: 10px 11px;
+    font-size: 13px;
+    border-radius: 14px;
+  }
+
+  .baitDisclaimer {
+    font-size: 9px;
+  }
+
+  .reveal {
+    padding: 10px;
+  }
+
+  .revealCard {
+    padding: 12px;
+  }
+
+  .revealHeader {
+    margin-bottom: 10px;
+    gap: 4px;
+  }
+
+  .revealTitle {
+    font-size: 17px;
+  }
+
+  .revealSubtitle {
+    font-size: 11px;
+  }
+
+  .revealPoster {
+    border-radius: 12px;
+  }
+
+  .revealCaption {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  .revealDetails {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 12px;
+  }
+
+  .revealProductName {
+    font-size: 14px;
+  }
+
+  .revealPrice {
+    font-size: 14px;
+  }
+
+  .revealBlurb {
+    font-size: 11px;
+    margin-top: 6px;
+  }
+
+  .revealKpis {
+    margin-top: 10px;
+    gap: 8px;
+  }
+
+  .revealKpi {
+    padding: 7px 8px;
+    border-radius: 10px;
+  }
+
+  .revealKpi__label {
+    font-size: 10px;
+  }
+
+  .revealKpi__value {
+    font-size: 12px;
+  }
+
+  .revealCtaRow {
+    margin-top: 10px;
+    gap: 6px;
+  }
+
+  .revealCtaBtn {
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 10px;
+  }
+
+  .revealFinePrint {
+    font-size: 10px;
   }
 }
 
