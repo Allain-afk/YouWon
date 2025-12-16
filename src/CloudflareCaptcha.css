@@ -1,0 +1,222 @@
+.cloudflare-page {
+  min-height: 100vh;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.cloudflare-header {
+  padding: 20px 40px;
+  background: #000000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cloudflare-logo {
+  width: 150px;
+  height: auto;
+}
+
+.cloudflare-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.cloudflare-card {
+  background: #2a2a2a;
+  border-radius: 4px;
+  border: 1px solid #404040;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  padding: 30px 40px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.cloudflare-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.shield-icon {
+  font-size: 28px;
+}
+
+.cloudflare-title h1 {
+  font-size: 24px;
+  font-weight: 400;
+  color: #e0e0e0;
+  margin: 0;
+}
+
+.cloudflare-subtitle {
+  font-size: 16px;
+  color: #c0c0c0;
+  margin: 0 0 30px 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+.verification-section {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.captcha-box {
+  background: #1f1f1f;
+  border: 1px solid #505050;
+  border-radius: 3px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  min-width: 300px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox {
+  width: 26px;
+  height: 26px;
+  border: 2px solid #808080;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  background: #2a2a2a;
+  flex-shrink: 0;
+}
+
+.checkbox.checking {
+  border-color: #F38020;
+}
+
+.checkbox.verified {
+  background: #F38020;
+  border-color: #F38020;
+}
+
+.checkmark {
+  width: 20px;
+  height: 20px;
+  color: white;
+  animation: checkmark-appear 0.3s ease;
+}
+
+@keyframes checkmark-appear {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #404040;
+  border-top: 2px solid #F38020;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.checkbox-label {
+  font-size: 15px;
+  color: #e0e0e0;
+  font-weight: 400;
+}
+
+.progress-bar {
+  margin-top: 15px;
+  width: 100%;
+  height: 4px;
+  background: #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #F38020;
+  transition: width 0.1s linear;
+}
+
+.cloudflare-info {
+  margin-top: 30px;
+}
+
+.cloudflare-info p {
+  font-size: 13px;
+  color: #a0a0a0;
+  margin: 8px 0;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.cloudflare-notice {
+  font-weight: 400;
+  color: #c0c0c0;
+}
+
+.cloudflare-footer {
+  margin-top: 40px;
+  padding: 20px;
+  text-align: center;
+  color: #808080;
+  font-size: 12px;
+}
+
+.cloudflare-footer p {
+  margin: 5px 0;
+}
+
+.cloudflare-footer strong {
+  color: #F38020;
+  font-weight: 500;
+}
+
+.ray-id {
+  font-family: 'Courier New', monospace;
+  color: #606060;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .cloudflare-card {
+    padding: 30px 20px;
+  }
+
+  .cloudflare-title h1 {
+    font-size: 22px;
+  }
+
+  .captcha-box {
+    min-width: auto;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .checkbox-label {
+    font-size: 14px;
+  }
+}

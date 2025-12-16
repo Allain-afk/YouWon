@@ -2,8 +2,10 @@ import './App.css'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import BaitOverlay from './BaitOverlay'
 import ProductReveal from './ProductReveal'
+import CloudflareCaptcha from './CloudflareCaptcha'
 
 function App() {
+  const [isCaptchaVerified, setIsCaptchaVerified] = useState(false)
   const [isRevealed, setIsRevealed] = useState(false)
   const [isExiting, setIsExiting] = useState(false)
   const [isMusicPlaying, setIsMusicPlaying] = useState(false)
@@ -58,6 +60,10 @@ function App() {
     window.setTimeout(() => {
       setIsRevealed(true)
     }, 700)
+  }
+
+  if (!isCaptchaVerified) {
+    return <CloudflareCaptcha onVerified={() => setIsCaptchaVerified(true)} />
   }
 
   return (
